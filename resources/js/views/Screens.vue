@@ -23,10 +23,10 @@
                 <div class="col-sm-3" v-for="screen in screens">
                     <div class="card mt-3" >
                         <img :src="screen.screen" :alt="screen.title" class="card-img-top">
-                        @@ {{ screen.screen }} @@
+                        {{ screen.screen }}
                         <div class="card-body">
                             <h5 class="card-title"><span class="glyphicon glyphicon-user" id="start"></span> <label id="started">By</label> {{ screen.title }}</h5>
-                            <p class="card-text">{{ screen.description }}</p>
+                            <p class="card-text">@{{ screen.description }}@</p>
                             <router-link class="btn btn-primary" :to="{ name: 'screen.show', params: { id: screen.id } }">View</router-link>
                         </div>
 

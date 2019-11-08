@@ -41,7 +41,7 @@ class Screen extends Model
 	public function getScreenAttribute($value)
 	{
 		if($value) {
-			return sprintf('/images/screens/%s', $value);
+			return sprintf('/%s', $value);
 		} else {
 			return '';
 		}

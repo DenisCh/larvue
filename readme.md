@@ -7,5 +7,3 @@ nvm run dev
 Run worker:
 
 php artisan queue:work redis --queue=screens
-
-

@@ -37,12 +37,6 @@ class ScreenController extends Controller
      */
     public function show(Screen $screen)
     {
-    	$cmd = escapeshellcmd('phantomjs /home/denis/libs/phantomjs-2.1.1-linux-x86_64/rasterize.js https://google.com /home/denis/www/exmpl/larvue/public/images/screens/google.jpg 1200x1200');
-    	echo $cmd;
-    	passthru($cmd);
-    	#passthru("phantomjs -v");
-
-exit;
         return new ScreenResource($screen);
     }
 

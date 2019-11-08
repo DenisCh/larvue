@@ -39,8 +39,16 @@ class ReceiveScreenshort implements ShouldQueue
      */
     public function handle()
     {
-        //$screen = 'http://delivrd.ys/theme/Mtro/assets/admin/layout/img/logo.png';
-        $this->screen->screen = 'SUCCESS';
+        
+        $file = public_path('images/screens/'. $this->screen->id .'-'. md5($this->screen->url) . '.jpg');
+        $cmd = escapeshellcmd('phantomjs '. resource_path('js/screen.js') .' '. $this->screen->url .' '. $file .' 1200x1200');
+        passthru($cmd);
+        
+        $this->screen->description = $cmd;
+        $this->screen->screen = 'images/screens/'. $this->screen->id .'-'. md5($this->screen->url) . '.jpg';
+        $this->screen->screened_at = \Carbon\Carbon::now();
+        $this->screen->save();
+
         $this->screen->save();
     }
 }

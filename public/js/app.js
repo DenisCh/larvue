@@ -48262,9 +48262,9 @@ var render = function() {
                     attrs: { src: screen.screen, alt: screen.title }
                   }),
                   _vm._v(
-                    "\n                    @@ " +
+                    "\n                    " +
                       _vm._s(screen.screen) +
-                      " @@\n                    "
+                      "\n                    "
                   ),
                   _c(
                     "div",
@@ -48283,7 +48283,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
-                        _vm._v(_vm._s(screen.description))
+                        _vm._v("@" + _vm._s(screen.description) + "@")
                       ]),
                       _vm._v(" "),
                       _c(
